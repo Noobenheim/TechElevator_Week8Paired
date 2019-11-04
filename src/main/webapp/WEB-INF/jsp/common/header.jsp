@@ -24,7 +24,7 @@
         <p> Use these state of the art web applications to learn more about the solar system! </p>
         <ul>
             <li><a href="alienAgeInput">Alien Age</a></li>
-            <li><a href="#">Alien Weight</a></li>
+            <li><a href="alienWeightInput">Alien Weight</a></li>
             <li><a href="#">Drive Time</a></li>               
         </ul>
     </nav>

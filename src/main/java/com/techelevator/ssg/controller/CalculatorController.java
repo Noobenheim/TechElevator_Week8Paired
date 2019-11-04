@@ -29,4 +29,9 @@ public class CalculatorController {
 		return "alienAgeResult";
 	}
 	
+	@RequestMapping("/alienWeightInput")
+	public String calculateAlienWeight(ModelMap modelHolder) {
+		modelHolder.put("planets", PlanetCalculator.planets);
+		return "alienWeightInput";
+	}
 }
