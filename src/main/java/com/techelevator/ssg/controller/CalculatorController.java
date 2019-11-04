@@ -30,8 +30,15 @@ public class CalculatorController {
 	}
 	
 	@RequestMapping("/alienWeightInput")
-	public String calculateAlienWeight(ModelMap modelHolder) {
+	public String displayAlienWeight(ModelMap modelHolder) {
 		modelHolder.put("planets", PlanetCalculator.planets);
 		return "alienWeightInput";
+	}
+	
+	@RequestMapping("/alienWeightResult")
+	public String calculateAlienWeight(@RequestParam String inputPlanet, int inputWeight, ModelMap modelHolder) {
+		modelHolder.put("planet",PlanetCalculator.getPlanetFromString(inputPlanet));
+		modelHolder.put("planetWeight", PlanetCalculator.planetWeight(inputWeight, inputPlanet));
+		return "alienWeightResult";
 	}
 }
