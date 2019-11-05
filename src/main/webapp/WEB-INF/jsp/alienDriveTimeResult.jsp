@@ -5,7 +5,12 @@
 
 <section id="calculatorResult" class="centeredPanel">
 <img src="img/${planet.image}"/>
-<h2>If you are ${param.inputAge} years old on planet Earth, then you are <fmt:formatNumber type="number" maxFractionDigits="2" value="${planetAge}" /> ${planet.name} years old.</h2>
+<h2>
+	Traveling by ${travelMethod} you will reach ${ planet.name } in <fmt:formatNumber type="number" maxFractionDigits="2" value="${travelTime}" /> years. You will be <fmt:formatNumber type="number" maxFractionDigits="2" value="${newAge}" /> years old.
+<!--<c:if test="${ newAge > 122 }">
+		You'll be dead.
+	</c:if>-->
+</h2>
 
 
 </section>

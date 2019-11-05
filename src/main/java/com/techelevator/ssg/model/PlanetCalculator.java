@@ -5,7 +5,13 @@ import java.util.List;
 
 public class PlanetCalculator {
 	
-	public static List<Planet> planets = new ArrayList();
+	public static List<Planet> planets = new ArrayList<>();
+	
+	private static final int WALKING_SPEED = 3;
+	private static final int CAR_SPEED = 100;
+	private static final int BULLET_TRAIN_SPEED = 200;
+	private static final int BOEING_747_SPEED = 570;
+	private static final int CONCORDE_SPEED = 1350;
 	
 	static {
 		Planet mercury = new Planet("Mercury", 0.37, 87.96, 56974146);
@@ -50,9 +56,34 @@ public class PlanetCalculator {
 	
 	public static double planetWeight(int earthWeight, String planetName) {
 		Planet inputPlanet = getPlanetFromString(planetName);
-		Planet earth = getPlanetFromString("Earth");
 		
 		return earthWeight * inputPlanet.getGravity();
 	}
 	
+	public static double timeToTravelInYears(String planetName, String travelMethod) {
+		int speed = 0;
+		switch( travelMethod.toLowerCase() ) {
+			case "walking":
+				speed = WALKING_SPEED;
+				break;
+			case "car":
+				speed = CAR_SPEED;
+				break;
+			case "bullet_train":
+				speed = BULLET_TRAIN_SPEED;
+				break;
+			case "boeing_747":
+				speed = BOEING_747_SPEED;
+				break;
+			case "concorde":
+				speed = CONCORDE_SPEED;
+				break;
+			default:
+				return 0;
+		}
+		
+		Planet planet = getPlanetFromString(planetName);
+		return (planet.getAverageDistance() / (double)speed) / 24.0 / 365.0;
+		//											   hours   days   years
+	}
 }

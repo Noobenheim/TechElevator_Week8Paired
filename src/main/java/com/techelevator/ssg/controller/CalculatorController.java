@@ -41,4 +41,41 @@ public class CalculatorController {
 		modelHolder.put("planetWeight", PlanetCalculator.planetWeight(inputWeight, inputPlanet));
 		return "alienWeightResult";
 	}
+	
+	@RequestMapping("/alienDriveTimeInput")
+	public String displayAlientDriveTime(ModelMap modelHolder) {
+		modelHolder.put("planets",PlanetCalculator.planets);
+		return "alienDriveTimeInput";
+	}
+	
+	@RequestMapping("/alienDriveTimeResult")
+	public String calculateAlienDriveTime(@RequestParam String inputPlanet, @RequestParam String inputType, @RequestParam int inputAge, ModelMap modelHolder) {
+		double time = PlanetCalculator.timeToTravelInYears(inputPlanet, inputType);
+		
+		String travelMethod = "unknown";
+		switch( inputType.toLowerCase() ) {
+		case "walking":
+			travelMethod = "walking";
+			break;
+		case "car":
+			travelMethod = "car";
+			break;
+		case "bullet_train":
+			travelMethod = "bullet train";
+			break;
+		case "boeing_747":
+			travelMethod = "Boeing 747";
+			break;
+		case "concorde":
+			travelMethod = "Concorde";
+			break;
+	}
+		
+		modelHolder.put("planet", PlanetCalculator.getPlanetFromString(inputPlanet));
+		modelHolder.put("travelMethod", travelMethod);
+		modelHolder.put("newAge", inputAge + time);
+		modelHolder.put("travelTime", time);
+		
+		return "alienDriveTimeResult";
+	}
 }
