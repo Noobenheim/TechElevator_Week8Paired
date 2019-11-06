@@ -11,5 +11,9 @@ public class HomeController {
 		return "homePage";
 	}
 	
+	@RequestMapping("/forum")
+	public String showForum() {
+		return "redirect:/forum/";
+	}
 
 }
