@@ -5,27 +5,27 @@
 <section class="centeredPanel">
 <h2>Solar System Geek Gift Shop</h2>
 
-<div>
+<div class="detailPage">
 
-<div>
+<div class="detailImage">
 <img src="<c:url value="/img/${product.imageName}"/>"/>
 </div>
 
 
-<div>
+<div class="detailName">
 ${product.name}
 </div>
 
-<div>
+<div class="detailPrice">
 ${product.price}
 </div>
 
-<div>
+<div class="detailDescription">
 ${product.description}
 </div>
 
 
-<div>
+<div class="detailAddToCart">
 <Form method="POST" action="addToCart">
 <span id="quantity">
 Quantity to Buy

@@ -5,28 +5,29 @@
 <section class="centeredPanel">
 <h2>Solar System Geek Gift Shop</h2>
 
+<div class="cartPage">
 <c:set var="total" value="0"/>
 <c:forEach items="${cartItems}" var="cartMap">
 <c:set var="item" value="${cartMap.key}"/>
 <c:set var="quantity" value="${cartMap.value}"/>
 
-<div>
+<div class="cartImage">
 <img src="<c:url value="/img/${item.imageName}"/>"/>
 </div>
 
-<div>
+<div class="cartName">
 ${item.name}
 </div>
 
-<div>
+<div class="cartPrice">
 ${item.price}
 </div>
 
-<div>
+<div class="cartQuantity">
 ${quantity}
 </div>
 
-<div>
+<div class="cartItemTotal">
 <c:set var="itemTotal" value="${quantity * (item.price.getCents() + item.price.getDollars() * 100)/100.0}"/>
 $${ itemTotal }
 </div>
@@ -34,10 +35,10 @@ $${ itemTotal }
 <c:set var="total" value="${ total + itemTotal }"/>
 </c:forEach>
 
-<div>
+<div class="cartGrandTotal">
 Grand Total $${total}
 </div>
 
 </section>
-
+</div>
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

@@ -5,20 +5,20 @@
 <section class="centeredPanel">
 <h2 class="centered">Solar System Geek Gift Shop</h2>
 
-<div>
+<div class="giftShopPage">
 <c:forEach items="${products}" var="product">
-<div>
+<div class="giftShopProduct">
 
-<div>
+<div class="giftShopImage">
 <a href="<c:url value="/store/productDetail?id=${product.id}"/>"><img src="<c:url value="/img/${product.imageName}"/>"/></a>
 </div>
 
 
-<div>
+<div class="giftShopName">
 ${product.name}
 </div>
 
-<div>
+<div class="giftShopPrice">
 ${product.price}
 </div>
 

@@ -253,3 +253,80 @@ section#calculatorResult h2 {
 	color: white;
 	text-align: center;
 }
+
+.giftShopProduct {
+	display: grid;
+	grid-template-areas: "pic name" "pic price";
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: auto 1fr;
+	grid-row-gap: 10px;
+	grid-column-gap: 35px;
+}
+
+.giftShopProduct img, .detailImage img{
+	width: 100%;
+	height: auto;
+	
+	
+}
+
+.giftShopImage, .detailImage {
+	grid-area: pic;
+}
+
+.giftShopName, .detailName {
+	grid-area: name;
+	font-weight: bold;
+}
+
+.giftShopPrice, .detailPrice{
+	grid-area: price;
+	color: #69C4EA;
+}
+
+.detailPage {
+	display: grid;
+	grid-template-areas: "pic name" "pic price" "pic description" "pic addToCart";
+	grid-template-columns: 400px 1fr;
+	grid-template-rows: repeat(3,auto) 1fr;
+	grid-row-gap: 10px;
+	grid-column-gap: 35px;
+}
+
+.detailAddToCart {
+	grid-area: addToCart;
+}
+
+.detailName {
+	font-size: 30px;
+}
+
+.cartPage {
+	display: grid;
+	grid-template-columns: [pic] 200px [name] 1fr [price] auto [qty] auto [total] auto
+}
+
+.cartImage {
+	grid-area: pic;
+}
+
+.cartImage img{
+	height: auto;
+	width: 100%;
+}
+
+.cartName {
+	grid-area: name;
+}
+
+.cartPrice {
+	grid-area: price;
+}
+
+.cartQuantity {
+	grid-area: qty;
+}
+
+.cartItemTotal {
+	grid-area: total;
+}
