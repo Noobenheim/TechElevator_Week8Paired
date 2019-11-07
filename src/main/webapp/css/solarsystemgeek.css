@@ -303,11 +303,15 @@ section#calculatorResult h2 {
 
 .cartPage {
 	display: grid;
-	grid-template-columns: [pic] 200px [name] 1fr [price] auto [qty] auto [total] auto
+	grid-auto-rows: auto;
+	grid-template-columns: [pic] 200px [name] 1fr [price] auto [qty] auto [total] auto;
+	align-items: center;
+	grid-column-gap: 20px;
+	margin-right: 20px;
 }
 
 .cartImage {
-	grid-area: pic;
+	
 }
 
 .cartImage img{
@@ -316,17 +320,37 @@ section#calculatorResult h2 {
 }
 
 .cartName {
-	grid-area: name;
+	
 }
 
 .cartPrice {
-	grid-area: price;
+	
 }
 
 .cartQuantity {
-	grid-area: qty;
+	
 }
 
 .cartItemTotal {
-	grid-area: total;
+	
+}
+
+.cartHeading {
+	font-weight: bold;
+}
+
+.cartGrandTotal {
+	text-align: right;
+	margin-right: 20px;
+}
+
+.cartGrandTotal span{
+	font-weight: bold;
+}
+
+.cartCheckOut {
+	text-align: right;
+	margin-right: 15px;
+	margin-top: 5px;
+	
 }

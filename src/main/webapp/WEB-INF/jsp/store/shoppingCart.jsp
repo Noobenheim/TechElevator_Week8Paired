@@ -7,6 +7,15 @@
 
 <div class="cartPage">
 <c:set var="total" value="0"/>
+
+<div class="cartImage">
+</div>
+
+<div class="cartName cartHeading">Name</div>
+<div class="cartPrice cartHeading">Price</div>
+<div class="cartQuantity cartHeading">Qty.</div>
+<div class="cartItemTotal cartHeading">Total</div>
+
 <c:forEach items="${cartItems}" var="cartMap">
 <c:set var="item" value="${cartMap.key}"/>
 <c:set var="quantity" value="${cartMap.value}"/>
@@ -34,11 +43,16 @@ $${ itemTotal }
 
 <c:set var="total" value="${ total + itemTotal }"/>
 </c:forEach>
+</div>
 
-<div class="cartGrandTotal">
-Grand Total $${total}
+<div class="cartGrandTotal"><span>
+Grand Total</span> $${total}
+</div>
+
+<div class="cartCheckOut">
+<a href="#">Check out</a>
 </div>
 
 </section>
-</div>
+
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
