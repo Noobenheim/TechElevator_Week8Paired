@@ -23,10 +23,10 @@
         <h2>Explore The Solar System</h2>
         <p> Use these state of the art web applications to learn more about the solar system! </p>
         <ul>
-            <li><a href="alienAgeInput">Alien Age</a></li>
-            <li><a href="alienWeightInput">Alien Weight</a></li>
-            <li><a href="alienDriveTimeInput">Drive Time</a></li>      
-            <li><a href="forum">Space Forum</a></li>
-            <li><a href="store">Space Store</a></li>         
+            <li><a href="<c:url value="/alienAgeInput"/>">Alien Age</a></li>
+            <li><a href="<c:url value="/alienWeightInput"/>">Alien Weight</a></li>
+            <li><a href="<c:url value="/alienDriveTimeInput"/>">Drive Time</a></li>      
+            <li><a href="<c:url value="/forum"/>">Space Forum</a></li>
+            <li><a href="<c:url value="/store"/>">Space Store</a></li>         
         </ul>
     </nav>
