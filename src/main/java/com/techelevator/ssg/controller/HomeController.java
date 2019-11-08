@@ -10,4 +10,15 @@ public class HomeController {
 	public String displayHomePage() {
 		return "homePage";
 	}
+	
+	@RequestMapping("/forum")
+	public String showForum() {
+		return "redirect:/forum/";
+	}
+	
+	@RequestMapping("/store")
+	public String showStore() {
+		return "redirect:/store/";
+	}
+
 }
